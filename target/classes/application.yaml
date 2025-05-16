@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: subscriber
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: "10031998"
+
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: none
+
+  server:
+    port: 8080
+
+liquibase:
+  change-log: classpath:db/changelog/db.changelog-master.xml
+  url: jdbc:mysql://localhost:5432/postgres
+  username: postgres
+  password: "10031998"
+
+logging:
+  level:
+    ru:
+      yuzhakov:
+        subscriber:
+          controllers=INFO:
+

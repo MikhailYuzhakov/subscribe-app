@@ -1,0 +1,335 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-test-users
+      author: yuzhakovmikhail
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: last_name
+                  value: "Иванов"
+              - column:
+                  name: first_name
+                  value: "Иван"
+              - column:
+                  name: middle_name
+                  value: "Иванович"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: last_name
+                  value: "Петров"
+              - column:
+                  name: first_name
+                  value: "Петр"
+              - column:
+                  name: middle_name
+                  value: "Петрович"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: last_name
+                  value: "Сидоров"
+              - column:
+                  name: first_name
+                  value: "Сергей"
+              - column:
+                  name: middle_name
+                  value: "Николаевич"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: last_name
+                  value: "Кузнецова"
+              - column:
+                  name: first_name
+                  value: "Анна"
+              - column:
+                  name: middle_name
+                  value: "Владимировна"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: last_name
+                  value: "Смирнов"
+              - column:
+                  name: first_name
+                  value: "Дмитрий"
+              - column:
+                  name: middle_name
+                  value: "Олегович"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: last_name
+                  value: "Васильева"
+              - column:
+                  name: first_name
+                  value: "Елена"
+              - column:
+                  name: middle_name
+                  value: "Александровна"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: last_name
+                  value: "Попов"
+              - column:
+                  name: first_name
+                  value: "Алексей"
+              - column:
+                  name: middle_name
+                  value: "Игоревич"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: last_name
+                  value: "Новикова"
+              - column:
+                  name: first_name
+                  value: "Ольга"
+              - column:
+                  name: middle_name
+                  value: "Дмитриевна"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: last_name
+                  value: "Федоров"
+              - column:
+                  name: first_name
+                  value: "Михаил"
+              - column:
+                  name: middle_name
+                  value: "Сергеевич"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: last_name
+                  value: "Морозова"
+              - column:
+                  name: first_name
+                  value: "Татьяна"
+              - column:
+                  name: middle_name
+                  value: "Викторовна"
+
+  - changeSet:
+      id: insert-test-subscriptions
+      author: yuzhakovmikhail
+      changes:
+        - insert:
+            tableName: subscriptions
+            columns:
+              - column:
+                  name: service_name
+                  value: "Netflix"
+              - column:
+                  name: price
+                  value: 9.99
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: start_date
+                  value: "2024-01-01"
+              - column:
+                  name: end_date
+                  value: "2024-12-31"
+        - insert:
+            tableName: subscriptions
+            columns:
+              - column:
+                  name: service_name
+                  value: "Spotify"
+              - column:
+                  name: price
+                  value: 4.99
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: start_date
+                  value: "2024-02-01"
+              - column:
+                  name: end_date
+                  value: "2024-11-30"
+        - insert:
+            tableName: subscriptions
+            columns:
+              - column:
+                  name: service_name
+                  value: "YouTube Premium"
+              - column:
+                  name: price
+                  value: 11.99
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: start_date
+                  value: "2024-03-15"
+              - column:
+                  name: end_date
+                  value: "2024-11-30"
+        - insert:
+            tableName: subscriptions
+            columns:
+              - column:
+                  name: service_name
+                  value: "VK Музыка"
+              - column:
+                  name: price
+                  value: 399
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: start_date
+                  value: "2024-03-15"
+              - column:
+                  name: end_date
+                  value: "2025-11-30"
+        - insert:
+            tableName: subscriptions
+            columns:
+              - column:
+                  name: service_name
+                  value: "Яндекс.Плюс"
+              - column:
+                  name: price
+                  value: 299
+              - column:
+                  name: active
+                  value: true
+              - column:
+                  name: start_date
+                  value: "2024-03-15"
+              - column:
+                  name: end_date
+                  value: "2025-11-30"
+
+  - changeSet:
+      id: insert-link-table-value
+      author: yuzhakovmikhail
+      changes:
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 1
+              - column:
+                  name: subscription_id
+                  value: 1
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 1
+              - column:
+                  name: subscription_id
+                  value: 2
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 1
+              - column:
+                  name: subscription_id
+                  value: 5
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 2
+              - column:
+                  name: subscription_id
+                  value: 3
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 3
+              - column:
+                  name: subscription_id
+                  value: 2
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 4
+              - column:
+                  name: subscription_id
+                  value: 1
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 5
+              - column:
+                  name: subscription_id
+                  value: 5
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 6
+              - column:
+                  name: subscription_id
+                  value: 2
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 7
+              - column:
+                  name: subscription_id
+                  value: 4
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 8
+              - column:
+                  name: subscription_id
+                  value: 1
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 9
+              - column:
+                  name: subscription_id
+                  value: 1
+        - insert:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  value: 10
+              - column:
+                  name: subscription_id
+                  value: 2
+
+

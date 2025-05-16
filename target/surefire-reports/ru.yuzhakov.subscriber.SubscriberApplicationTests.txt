@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ru.yuzhakov.subscriber.SubscriberApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.372 s -- in ru.yuzhakov.subscriber.SubscriberApplicationTests

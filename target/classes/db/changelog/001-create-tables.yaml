@@ -1,0 +1,100 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users-table
+      author: your_name
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: middle_name
+                  type: VARCHAR(100)
+
+  - changeSet:
+      id: create-subscriptions-table
+      author: your_name
+      changes:
+        - createTable:
+            tableName: subscriptions
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: service_name
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: DECIMAL(10, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: active
+                  type: BOOLEAN
+                  defaultValue: true
+              - column:
+                  name: start_date
+                  type: DATE
+              - column:
+                  name: end_date
+                  type: DATE
+
+  - changeSet:
+      id: create-user-subscription-link-table
+      author: yuzhakovmikhail
+      changes:
+        - createTable:
+            tableName: user_subscription
+            columns:
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_user_subscription_user
+                    references: users(id)
+                    onDelete: CASCADE
+              - column:
+                  name: subscription_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_user_subscription_subscription
+                    references: subscriptions(id)
+                    onDelete: CASCADE
+        - addPrimaryKey:
+            tableName: user_subscription
+            columnNames: user_id, subscription_id
+        - createIndex:
+            tableName: user_subscription
+            indexName: idx_user_subscription_user
+            columns:
+              - column:
+                  name: user_id
+        - createIndex:
+            tableName: user_subscription
+            indexName: idx_user_subscription_subscription
+            columns:
+              - column:
+                  name: subscription_id
